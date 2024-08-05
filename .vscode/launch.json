@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "JacBackup",
+            "request": "launch",
+            "mainClass": "an.james.victoria.orca.JacBackup",
+            "projectName": "jac-function"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-JaeApplication<jac-study>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "an.james.victoria.orca.JacBackup",
+            "projectName": "jac-db-backup",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
