@@ -12,8 +12,10 @@ public class JacBackup {
         // MySQL credentials
         String host = "jamesan-db.mysql.database.azure.com";
         String user = "javacoffee";
-        String password = System.getenv("DB_PASS"); // jajva
+        String password = System.getenv("DB_PASS");
         String database = "jac";
+        String connectStr = System.getenv("AZURE_STORAGE");
+
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
         String timestamp = dtf.format(LocalDateTime.now());
@@ -51,10 +53,6 @@ public class JacBackup {
             if (dataBackupExitCode != 0) {
                 throw new RuntimeException("Data-only backup mysqldump command failed with exit code " + dataBackupExitCode);
             }
-
-            // Debugging: Set the connection string directly
-            String connectStr = System.getenv("AZURE_STORAGE");
-
             BlobServiceClient blobServiceClient = new BlobServiceClientBuilder().connectionString(connectStr).buildClient();
             BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient("mysql-backup");
 

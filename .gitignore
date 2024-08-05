@@ -5,6 +5,9 @@ target/
 # Log file
 *.log
 
+# Docker
+Dockerfile
+
 # BlueJ files
 *.ctxt
 
