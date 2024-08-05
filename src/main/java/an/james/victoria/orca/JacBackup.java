@@ -12,7 +12,7 @@ public class JacBackup {
         // MySQL credentials
         String host = "jamesan-db.mysql.database.azure.com";
         String user = "javacoffee";
-        String password = System.getenv("DB_PASS");
+        String password = System.getenv("DB_PASS"); // jajva
         String database = "jac";
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
