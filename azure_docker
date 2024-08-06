@@ -2,15 +2,15 @@
 mvn clean package
 
 # Build and tag the image
-docker build --platform=linux/amd64 -t jac-function .
-docker tag jac-function jaccontainer.azurecr.io/jac-function:latest
+docker build --platform=linux/amd64 -t mysql-backup .
+docker tag mysql-backup jaccontainer.azurecr.io/mysql-backup:latest
 
 # Login to Azure and ACR
 az login
 az acr login --name jaccontainer
 
 # Push the image to ACR
-docker push jaccontainer.azurecr.io/jac-function:latest
+docker push jaccontainer.azurecr.io/mysql-backup:latest
 
 ################### Local run ###################
 # 1. mvn clean package
